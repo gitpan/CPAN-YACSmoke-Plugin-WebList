@@ -9,6 +9,7 @@ WriteMakefile
 				'WWW::Mechanize'        => 0,
 				'Template::Extract'     => 0,
     },
-    'INSTALLDIRS' => 'site',
-    'PL_FILES' => {}
+    ($] >= 5.005 ?    ## Add these new keywords supported since 5.005
+      (ABSTRACT	=> 'WebList plugin for CPAN::YACSmoke',
+       AUTHOR	=> 'Barbie <barbie@cpan.org>') : ()),
 );
