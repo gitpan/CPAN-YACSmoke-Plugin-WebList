@@ -1,0 +1,9 @@
+Changes
+Makefile.PL
+MANIFEST
+META.yml
+README
+lib/CPAN/YACSmoke/Plugin/WebList.pm
+t/00basics.t
+t/12weblist.t
+t/90podtest.t
