@@ -4,7 +4,7 @@ use 5.006001;
 use strict;
 use warnings;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 # -------------------------------------
 
@@ -74,6 +74,8 @@ my $template = <<HERE;
 [% END %]<HR />
 HERE
 
+#" - quote apears here to help syntax highlighting issue.
+
 # -------------------------------------
 # The Subs
 
@@ -90,7 +92,7 @@ Creates the plugin object.
 =cut
     
 sub new {
-    my $class = shift || __PACKAGE__;
+    my $class = shift;
     my $hash  = shift;
 
     my $self = {};
@@ -120,7 +122,7 @@ sub download_list {
         $mechanize->get( $path );
         last    if($mechanize->success());
     }
-    return undef    unless($mechanize->success());
+    return  unless($mechanize->success());
 
     my $data = $extract->extract($template, $mechanize->content());
     foreach my $post (@{$data->{data}}) {
@@ -139,25 +141,28 @@ __END__
 This is a proto-type release. Use with caution and supervision.
 
 The current version has a very primitive interface and limited
-functionality.  Future versions may have a lot of options.
+functionality. Future versions may have a lot of options.
 
 There is always a risk associated with automatically downloading and
 testing code from CPAN, which could turn out to be malicious or
-severely buggy.  Do not run this on a critical machine.
+severely buggy. Do not run this on a critical machine.
 
 This module uses the backend of CPANPLUS to do most of the work, so is
 subject to any bugs of CPANPLUS.
 
-=head1 BUGS, PATCHES & FIXES
+=head1 SUPPORT
 
 There are no known bugs at the time of this release. However, if you spot a
-bug or are experiencing difficulties, that is not explained within the POD
-documentation, please send an email to barbie@cpan.org or submit a bug to the
-RT system (http://rt.cpan.org/). However, it would help greatly if you are 
-able to pinpoint problems or even supply a patch. 
+bug or are experiencing difficulties that are not explained within the POD
+documentation, please submit a bug to the RT system (see link below). However,
+it would help greatly if you are able to pinpoint problems or even supply a 
+patch. 
 
 Fixes are dependant upon their severity and my availablity. Should a fix not
-be forthcoming, please feel free to (politely) remind me.
+be forthcoming, please feel free to (politely) remind me by sending an email
+to barbie@cpan.org .
+
+RT: http://rt.cpan.org/Public/Dist/Display.html?Name=CPAN-YACSmoke-Plugin-WebList
 
 =head1 SEE ALSO
 
@@ -180,15 +185,18 @@ For additional information, see the documentation for these modules:
 
 =head1 AUTHOR
 
-  Barbie, <barbie@cpan.org>
-  for Miss Barbell Productions <http://www.missbarbell.co.uk>.
+Barbie <barbie@cpan.org>
+for Miss Barbell Productions http://www.missbarbell.co.uk.
 
 =head1 COPYRIGHT AND LICENSE
 
-  Copyright (C) 2005 Barbie for Miss Barbell Productions.
-  All Rights Reserved.
+  Copyright (C) 2005-2007 Barbie for Miss Barbell Productions.
 
-  This module is free software; you can redistribute it and/or 
+  This library is free software; you can redistribute it and/or 
   modify it under the same terms as Perl itself.
+
+The full text of the licenses can be found in the Artistic file included with
+this distribution, or in perlartistic file available with your Perl 
+installation.
 
 =cut

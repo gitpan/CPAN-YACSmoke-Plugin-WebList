@@ -5,10 +5,12 @@ WriteMakefile
     'VERSION_FROM' => 'lib/CPAN/YACSmoke/Plugin/WebList.pm',
     'PREREQ_PM' => {
                 'Test::More'            => 0,
-                'CPAN::YACSmoke'        => '0.02_03',
+                'CPAN::YACSmoke'        => 0.03,
 				'WWW::Mechanize'        => 0,
 				'Template::Extract'     => 0,
     },
+	NO_META			=> 1,
+
     ($] >= 5.005 ?    ## Add these new keywords supported since 5.005
       (ABSTRACT	=> 'WebList plugin for CPAN::YACSmoke',
        AUTHOR	=> 'Barbie <barbie@cpan.org>') : ()),

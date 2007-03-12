@@ -1,5 +1,14 @@
 Revision history for Perl extension CPAN::YACSmoke::Plugin::WebList.
 
+0.05	12/03/2007
+	- Handwritten META.yml to conform to current specs.
+	- Changed all instances of LICENCE to LICENSE.
+	- Added META.yml test script.
+	- Added LICENSE file.
+	- Renamed the contrib directory to examples.
+	- POD/README updates.
+	- Devel::Cover = 96.3%
+
 0.04    27/03/2005
         - Added DSLIP information
         - Added POD coverage test script
