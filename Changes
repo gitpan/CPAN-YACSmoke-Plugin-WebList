@@ -1,5 +1,9 @@
 Revision history for Perl extension CPAN::YACSmoke::Plugin::WebList.
 
+0.06	16/08/2009
+	- added protection against non-existent web links
+	- updated tests.
+
 0.05	12/03/2007
 	- Handwritten META.yml to conform to current specs.
 	- Changed all instances of LICENCE to LICENSE.

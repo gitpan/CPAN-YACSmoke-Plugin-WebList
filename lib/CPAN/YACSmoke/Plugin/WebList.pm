@@ -4,7 +4,7 @@ use 5.006001;
 use strict;
 use warnings;
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 # -------------------------------------
 
@@ -74,8 +74,6 @@ my $template = <<HERE;
 [% END %]<HR />
 HERE
 
-#" - quote apears here to help syntax highlighting issue.
-
 # -------------------------------------
 # The Subs
 
@@ -119,7 +117,7 @@ sub download_list {
 
     my @paths = $self->{webpath} ? ($self->{webpath}) : @webpaths;
     for my $path (@paths) {
-        $mechanize->get( $path );
+        eval { $mechanize->get( $path ) };
         last    if($mechanize->success());
     }
     return  unless($mechanize->success());
