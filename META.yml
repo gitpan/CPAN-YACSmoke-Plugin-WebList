@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:                   CPAN-YACSmoke-Plugin-WebList
-version:                0.06
+version:                0.07
 abstract:               Website list plugin for CPAN-YACSmoke
 author:
   - Barbie <barbie@cpan.org>
@@ -10,7 +10,6 @@ distribution_type:      module
 installdirs:            site
 
 requires:
-  CPAN::YACSmoke:       0.03
   Template::Extract:    0
   WWW::Mechanize:       0
   Test::More:           0.47
@@ -18,14 +17,14 @@ recommends:
   Test::More:           0.47
   Test::Pod:            1.00
   Test::Pod::Coverage:  0.08
-  Test::YAML::Meta:     0.03
+  Test::CPAN::Meta:     0.03
 build_requires:
   Test::More:           0.47
 
 provides:
   CPAN::YACSmoke::Plugin::WebList:
     file:     lib/CPAN/YACSmoke/Plugin/WebList.pm
-    version:  0.06
+    version:  0.07
 no_index:
   directory:
     - t

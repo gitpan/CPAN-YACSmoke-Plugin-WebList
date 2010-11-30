@@ -4,7 +4,7 @@ use 5.006001;
 use strict;
 use warnings;
 
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 # -------------------------------------
 
@@ -12,17 +12,16 @@ our $VERSION = '0.06';
 
 CPAN::YACSmoke::Plugin::WebList - WebList plugin for CPAN::YACSmoke
 
-=head1 SYNOPSIS
-
-  use CPAN::YACSmoke;
-  my $config = {
-      list_from => 'WebList', 
-      webpath => 'http://my.web.list/' # defaults to KobeSearch site
-  };
-  my $foo = CPAN::YACSmoke->new(config => $config);
-  my @list = $foo->download_list();
-
 =head1 DESCRIPTION
+
+IMPORTANT NOTES: 
+
+  1) CPAN::YACSmoke is no longer supported.
+  2) The recommend CPANPLUS smoker is now CPANPLUS-Smoker.
+  3) The NNTP feed has now been disabled. 
+  4) The CPAN Testers mailing list has now been disabled. 
+
+As such this module will be removed from CPAN in January 2011.
 
 This module provides the backend ability to access the list of current
 modules from the 'recent uploads to CPAN' web pages available. Note the
@@ -46,12 +45,21 @@ added in the future.
   http://search.cpan.org/recent
   http://use.perl.org/modulelist/
 
+=head1 SYNOPSIS
+
+  use CPAN::YACSmoke;
+  my $config = {
+      list_from => 'WebList', 
+      webpath => 'http://my.web.list/' # defaults to KobeSearch site
+  };
+  my $foo = CPAN::YACSmoke->new(config => $config);
+  my @list = $foo->download_list();
+
 =cut
 
 # -------------------------------------
 # Library Modules
 
-use CPAN::YACSmoke;
 use WWW::Mechanize;
 use Template::Extract;
 
@@ -164,8 +172,15 @@ RT: http://rt.cpan.org/Public/Dist/Display.html?Name=CPAN-YACSmoke-Plugin-WebLis
 
 =head1 SEE ALSO
 
-The CPAN Testers Website at L<http://testers.cpan.org> has information
-about the CPAN Testing Service.
+CPAN Testers Reports - L<http://www.cpantesters.org>
+
+CPAN Testers Wiki - L<http://wiki.cpantesters.org>
+
+CPAN Testers Blog - L<http://blog.cpantesters.org>
+
+CPAN Testers Development - L<http://devel.cpantesters.org>
+
+CPAN Testers Statistics - L<http://stats.cpantesters.org>
 
 For additional information, see the documentation for these modules:
 
@@ -188,13 +203,9 @@ for Miss Barbell Productions http://www.missbarbell.co.uk.
 
 =head1 COPYRIGHT AND LICENSE
 
-  Copyright (C) 2005-2007 Barbie for Miss Barbell Productions.
+  Copyright (C) 2005-2010 Barbie for Miss Barbell Productions.
 
-  This library is free software; you can redistribute it and/or 
-  modify it under the same terms as Perl itself.
-
-The full text of the licenses can be found in the Artistic file included with
-this distribution, or in perlartistic file available with your Perl 
-installation.
+  This module is free software; you can redistribute it and/or
+  modify it under the Artistic Licence v2.
 
 =cut
