@@ -1,5 +1,9 @@
 Revision history for Perl extension CPAN::YACSmoke::Plugin::WebList.
 
+0.08	02/12/2010
+        - added Template-Toolkit as a prerequisite due to some installers of
+          Template-Extract not installing it!
+
 0.07	30/11/2010
         - CPAN::YACSmoke is no longer supported.
         - The recommend CPANPLUS smoker is now CPANPLUS-Smoker.

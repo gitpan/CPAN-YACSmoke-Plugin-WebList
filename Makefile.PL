@@ -7,6 +7,7 @@ WriteMakefile
                 'Test::More'            => 0,
 				'WWW::Mechanize'        => 0,
 				'Template::Extract'     => 0,
+				'Template'              => '2.00',
     },
 	NO_META			=> 1,
 
